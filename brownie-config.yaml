@@ -1,19 +1,18 @@
 dependencies:
-  - smartcontractkit/chainlink-brownie-contracts@0.4.2
-  - OpenZeppelin/openzeppelin-contracts@4.7.3
-  - divergencetech/ethier@0.31.0
+  - OpenZeppelin/openzeppelin-contracts@3.0.0
   - Uniswap/v2-core@1.0.1
   - Uniswap/v2-periphery@1.0.0-beta.0
+  - iurii2002/pancake-swap-lib@1.0.0
+
 
   
 compiler:
   solc:
     remappings:
-      - '@chainlink=smartcontractkit/chainlink-brownie-contracts@0.4.2'
-      - '@openzeppelin=OpenZeppelin/openzeppelin-contracts@4.7.3'
-      - '@divergencetech=divergencetech/ethier@0.31.0'
+      - '@openzeppelin=OpenZeppelin/openzeppelin-contracts@3.0.0'
       - '@uniswap=Uniswap/v2-core@1.0.1'
       - '@uniswapPeriphery=Uniswap/v2-periphery@1.0.0-beta.0'
+      - '@pancakeswap=iurii2002/pancake-swap-lib@1.0.0'
 dotenv: .env
 
 networks:

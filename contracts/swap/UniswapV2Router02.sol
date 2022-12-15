@@ -3,7 +3,7 @@
 pragma solidity =0.6.6;
 
 import "@uniswap/contracts/interfaces/IUniswapV2Factory.sol";
-import "@uniswapPeriphery/contracts/libraries/SafeMath.sol";
+import "@uniswap/contracts/libraries/SafeMath.sol";
 import "@uniswapPeriphery/contracts/interfaces/IERC20.sol";
 import "@uniswapPeriphery/contracts/interfaces/IWETH.sol";
 import "../../lib/TransferHelper.sol";

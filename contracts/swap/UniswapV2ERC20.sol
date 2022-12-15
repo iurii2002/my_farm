@@ -3,7 +3,7 @@
 pragma solidity =0.5.16;
 
 import "@uniswap/contracts/interfaces/IUniswapV2ERC20.sol";
-import "@uniswap/contracts//libraries/SafeMath.sol";
+import "@uniswap/contracts/libraries/SafeMath.sol";
 
 contract UniswapV2ERC20 is IUniswapV2ERC20 {
     using SafeMath for uint256;
