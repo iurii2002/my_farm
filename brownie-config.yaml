@@ -3,6 +3,8 @@ dependencies:
   - OpenZeppelin/openzeppelin-contracts@4.7.3
   - divergencetech/ethier@0.31.0
   - Uniswap/v2-core@1.0.1
+  - Uniswap/v2-periphery@1.0.0-beta.0
+
   
 compiler:
   solc:
@@ -11,6 +13,7 @@ compiler:
       - '@openzeppelin=OpenZeppelin/openzeppelin-contracts@4.7.3'
       - '@divergencetech=divergencetech/ethier@0.31.0'
       - '@uniswap=Uniswap/v2-core@1.0.1'
+      - '@uniswapPeriphery=Uniswap/v2-periphery@1.0.0-beta.0'
 dotenv: .env
 
 networks:
