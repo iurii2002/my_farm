@@ -19,3 +19,6 @@ https://docs.sushi.com/docs/Developers/Sushiswap/MasterChef
 
 sushi masterchiefv2
 https://etherscan.io/address/0xef0881ec094552b2e128cf945ef17a6752b4ec5d#readContract
+
+
+brownie test --disable-warnings
