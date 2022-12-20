@@ -1,12 +1,12 @@
 // SPDX-License-Identifier: MIT
 
-pragma solidity =0.5.16;
+pragma solidity >0.5.16;
 
-import "@uniswap/contracts/interfaces/IUniswapV2ERC20.sol";
-import "@uniswap/contracts/libraries/SafeMath.sol";
+import "../../interfaces/swap/IUniswapV2ERC20.sol";
+import "../../libraries/SafeMath.sol";
 
-contract UniswapV2ERC20 is IUniswapV2ERC20 {
-    using SafeMath for uint256;
+contract UniswapV2ERC20 {
+    using SafeMathUniswap for uint256;
 
     string public constant name = "Uniswap V2";
     string public constant symbol = "UNI-V2";
@@ -31,7 +31,7 @@ contract UniswapV2ERC20 is IUniswapV2ERC20 {
     constructor() public {
         uint256 chainId;
         assembly {
-            chainId := chainid
+            chainId := chainid()
         }
         DOMAIN_SEPARATOR = keccak256(
             abi.encode(

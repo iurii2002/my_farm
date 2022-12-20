@@ -1,6 +1,8 @@
+// SPDX-License-Identifier: MIT
+
 pragma solidity >=0.5.0;
 
-import "@uniswap/contracts/interfaces/IUniswapV2Pair.sol";
+import "../interfaces/swap/IUniswapV2Pair.sol";
 import "./SafeMath.sol";
 
 library UniswapV2Library {

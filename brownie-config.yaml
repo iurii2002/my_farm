@@ -1,19 +1,24 @@
 dependencies:
-  - OpenZeppelin/openzeppelin-contracts@3.0.0
-  - Uniswap/v2-core@1.0.1
-  - Uniswap/v2-periphery@1.0.0-beta.0
-  - iurii2002/pancake-swap-lib@1.0.0
+  - OpenZeppelin/openzeppelin-contracts@3.4.0
+  # - Uniswap/v2-core@1.0.1
+  # - Uniswap/v2-periphery@1.0.0-beta.0
+  # - iurii2002/pancake-swap-lib@1.0.0
 
-
-  
-compiler:
-  solc:
-    remappings:
-      - '@openzeppelin=OpenZeppelin/openzeppelin-contracts@3.0.0'
-      - '@uniswap=Uniswap/v2-core@1.0.1'
-      - '@uniswapPeriphery=Uniswap/v2-periphery@1.0.0-beta.0'
-      - '@pancakeswap=iurii2002/pancake-swap-lib@1.0.0'
 dotenv: .env
+
+
+compiler:
+    evm_version: null
+    solc:
+        version: 0.6.12
+        optimizer:
+            enabled: true
+            runs: 200
+        remappings: 
+          - "@openzeppelin=OpenZeppelin/openzeppelin-contracts@3.4.0"
+    vyper:
+        version: null
+
 
 networks:
   default: development
@@ -25,12 +30,14 @@ networks:
     vrf_v2_coordinator: '0x2Ca8E0C643bDe4C2E08ab1fA0da3401AdAD7734D'
     link_token: '0x326C977E6efc84E512bB9C30f76E30c160eD06FB'
     keyHash: '0x79d3d8832d904592c0bf9818b621522c988bb8b0c05cdc3b15aea1b6e8db0c15'
+    weth: 
     verify: True
   mainnet:
     link_token: '0x514910771AF9Ca656af840dff83E8264EcF986CA'
     boss_contract: '0x40d420f3937428f5625196cEa1e170A8B2a8ff9F'
     vrf_v2_coordinator: '0x271682DEB8C4E0901D1a1550aD2e64D568E69909'
     keyHash: '0x8af398995b04c28e9951adb9721ef74c74f93e6a478f39e7e0777be13527e7ef'
+    weth: '0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2'
     verify: True
   mainnet-fork:    
     link_token: '0x514910771AF9Ca656af840dff83E8264EcF986CA'
@@ -49,8 +56,8 @@ networks:
 wallets:
   from_key: ${PRIVATE_KEY}
 
-reports:
-  exclude_contracts:
-    - LinkToken
-    - VRFCoordinatorV2Mock
-    - ERC721
+# reports:
+#   exclude_contracts:
+#     - LinkToken
+#     - VRFCoordinatorV2Mock
+#     - ERC721
