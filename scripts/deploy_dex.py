@@ -10,6 +10,7 @@ def deploy_dex():
     routerv2 = UniswapV2Router02.deploy(
         factoryV2.address,
         get_contract("WETH").address,
+        {"from": account}
     )
 
     return factoryV2, v2erc20, routerv2

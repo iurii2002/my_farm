@@ -4,7 +4,7 @@ from brownie import (
     config,
     Contract,
     chain,
-    WETH9,
+    MaticWETH,
 )
 
 FORKED_LOCAL_ENVIRONMENTS = ["mainnet-fork", "mainnet-fork-dev"]
@@ -30,7 +30,7 @@ def get_account(index=None, id=None):
     return accounts.add(config["wallets"]["from_key"])
 
 
-contract_to_mock = {"WETH": WETH9}
+contract_to_mock = {"WETH": MaticWETH}
 
 
 def get_contract(contract_name):
@@ -64,6 +64,6 @@ def get_contract(contract_name):
 
 def deploy_mocks():
     account = get_account()
-    weth_token = WETH9.deploy({"from": account})
+    weth_token = MaticWETH.deploy(account.address, {"from": account})
     print("Deployed!")
     return weth_token
