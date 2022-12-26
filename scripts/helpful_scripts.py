@@ -53,7 +53,8 @@ def get_contract(contract_name):
         contract = contract_type[-1]
         # Else choose last one
     else:
-        contract_address = config["networks"][network.show_active()][contract_name]
+        contract_address = config["networks"][network.show_active(
+        )][contract_name]
         # address
         # ABI
         contract = Contract.from_abi(
@@ -67,3 +68,9 @@ def deploy_mocks():
     weth_token = MaticWETH.deploy(account.address, {"from": account})
     print("Deployed!")
     return weth_token
+
+
+def get_key_from_event(event, _key):
+    for key, value in event.items():
+        if key == _key:
+            return value

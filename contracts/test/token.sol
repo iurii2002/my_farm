@@ -7,4 +7,7 @@ contract Token is ERC20 {
     constructor(uint256 initialSupply, string memory Name, string memory Ticker) ERC20(Name, Ticker) public {
         _mint(msg.sender, initialSupply);
     }
+
+    function forTest() public {        
+    }
 }

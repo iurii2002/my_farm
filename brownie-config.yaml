@@ -53,6 +53,9 @@ networks:
     verify: False
   ganache-local:
     verify: False
+  arbitrum-goerli:
+    WETH: '0xee01c0cd76354c383b8c7b4e65ea88d00b06f36f'
+    verify: True
 wallets:
   from_key: ${PRIVATE_KEY}
 

@@ -5,10 +5,11 @@ from scripts.helpful_scripts import get_account
 def deploy_token():
     return Token.deploy(
         1e21,
-        "New fancy token",
-        "NFT",
+        "Test Token",
+        "Test",
         {"from": get_account()},
-        publish_source=config["networks"][network.show_active()].get("verify", False),
+        publish_source=config["networks"][network.show_active()].get(
+            "verify", False),
     )
 
 

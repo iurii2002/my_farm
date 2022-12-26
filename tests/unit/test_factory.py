@@ -11,7 +11,7 @@ def dex_contracts():
 
 
 def test_create_pair(dex_contracts):
-    factoryV2, v2erc20, routerv2 = dex_contracts
+    factoryV2, routerv2 = dex_contracts
     account = get_account()
     current_pairs_amount = factoryV2.allPairsLength({"from": account})
     assert current_pairs_amount == 0
@@ -25,7 +25,7 @@ def test_create_pair(dex_contracts):
 
 
 def test_could_not_create_pair_twice(dex_contracts):
-    factoryV2, v2erc20, routerv2 = dex_contracts
+    factoryV2, routerv2 = dex_contracts
     account = get_account()
     token1 = deploy_token()
     token2 = deploy_token()
@@ -39,7 +39,7 @@ def test_could_not_create_pair_twice(dex_contracts):
 
 
 def test_could_not_create_same_token_pair(dex_contracts):
-    factoryV2, v2erc20, routerv2 = dex_contracts
+    factoryV2, routerv2 = dex_contracts
     account = get_account()
     token1 = deploy_token()
     with reverts("UniswapV2: IDENTICAL_ADDRESSES"):
@@ -49,7 +49,7 @@ def test_could_not_create_same_token_pair(dex_contracts):
 
 
 def test_set_feeToSetter(dex_contracts):
-    factoryV2, v2erc20, routerv2 = dex_contracts
+    factoryV2, routerv2 = dex_contracts
     account = get_account()
     current_fee_to_setter = factoryV2.feeToSetter({"from": account})
     assert current_fee_to_setter == get_account()
@@ -62,7 +62,7 @@ def test_set_feeToSetter(dex_contracts):
 
 
 def test_only_feeToSetter_can_change_feeToSetter(dex_contracts):
-    factoryV2, v2erc20, routerv2 = dex_contracts
+    factoryV2, routerv2 = dex_contracts
     new_account = get_account(index=2)
     current_fee_to_setter = factoryV2.feeToSetter({"from": new_account})
     assert current_fee_to_setter != new_account
@@ -73,7 +73,7 @@ def test_only_feeToSetter_can_change_feeToSetter(dex_contracts):
 
 
 def test_change_feeTo(dex_contracts):
-    factoryV2, v2erc20, routerv2 = dex_contracts
+    factoryV2, routerv2 = dex_contracts
     account = get_account()
     old_fee_to = factoryV2.feeTo({"from": account})
     new_fee_to_account = get_account(index=5)
@@ -85,7 +85,7 @@ def test_change_feeTo(dex_contracts):
 
 
 def test_only_feeToSetter_can_change_feeTo(dex_contracts):
-    factoryV2, v2erc20, routerv2 = dex_contracts
+    factoryV2, routerv2 = dex_contracts
     new_account = get_account(index=5)
     current_fee_to_setter = factoryV2.feeTo({"from": new_account})
     assert current_fee_to_setter != new_account
