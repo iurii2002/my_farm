@@ -9,7 +9,7 @@ def deploy_factory():
                                         publish_source=config["networks"][network.show_active()].get(
         "verify", False),
     )
-
+    factoryV2.tx.wait(1)
     return factoryV2
 
 

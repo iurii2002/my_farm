@@ -2,7 +2,7 @@
 // Audit on 5-Jan-2021 by Keno and BoringCrypto
 
 // P1 - P3: OK
-pragma solidity >=0.6.12;
+pragma solidity 0.6.12;
 pragma experimental ABIEncoderV2;
 // solhint-disable avoid-low-level-calls
 

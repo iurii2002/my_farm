@@ -1,7 +1,7 @@
 import pytest
 from scripts.helpful_scripts import get_account
 from scripts.deploy_dex import deploy_dex
-from scripts.deploy_tokens import deploy_token
+from scripts.deploy_token import deploy_token
 from brownie import reverts
 
 

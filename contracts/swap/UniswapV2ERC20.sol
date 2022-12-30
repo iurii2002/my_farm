@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: MIT
 
-pragma solidity >0.5.16;
+pragma solidity 0.6.12;
 
 import "../../interfaces/swap/IUniswapV2ERC20.sol";
 import "../../libraries/SafeMath.sol";
@@ -8,8 +8,8 @@ import "../../libraries/SafeMath.sol";
 contract UniswapV2ERC20 {
     using SafeMathUniswap for uint256;
 
-    string public constant name = "Uniswap V2";
-    string public constant symbol = "UNI-V2";
+    string public constant name = "T2swap";
+    string public constant symbol = "T2LP";
     uint8 public constant decimals = 18;
     uint256 public totalSupply;
     mapping(address => uint256) public balanceOf;

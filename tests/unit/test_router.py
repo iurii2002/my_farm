@@ -2,7 +2,7 @@ import pytest
 from web3 import Web3
 from scripts.helpful_scripts import get_account, get_key_from_event
 from scripts.deploy_dex import deploy_dex
-from scripts.deploy_tokens import deploy_token
+from scripts.deploy_token import deploy_token
 from brownie import reverts, interface
 
 
